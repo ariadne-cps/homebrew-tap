@@ -1,0 +1,16 @@
+name: installation test 
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: macos-latest
+
+    steps:
+    - name: Try installation 
+      run: |
+        brew tap ariadne-cps/ariadne
+        brew install ariadne

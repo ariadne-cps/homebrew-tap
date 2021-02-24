@@ -1,4 +1,4 @@
-# Ariadne-cps Ariadne
+# ariadne-cps ariadne
 
 ## How do I install these formulae?
 `brew install ariadne-cps/ariadne/<formula>`

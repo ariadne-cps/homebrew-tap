@@ -11,6 +11,4 @@ jobs:
 
     steps:
     - name: Try installation 
-      run: |
-        brew tap ariadne-cps/ariadne
-        brew install ariadne
+      run: brew install ariadne-cps/tap/ariadne

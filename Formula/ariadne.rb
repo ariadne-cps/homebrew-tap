@@ -15,7 +15,6 @@ class Ariadne < Formula
 
   def install
     mkdir "build" do
-      userdir = "/Users/"+`whoami`.strip
       system "cmake -G \"Ninja\" .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=#{prefix}"
       system "cmake", "--build", ".", "--target", "install", "--parallel"
       system "pip3 install ../python"

@@ -17,7 +17,6 @@ class Ariadne < Formula
     mkdir "build" do
       system "cmake -G \"Ninja\" .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=#{prefix}"
       system "cmake", "--build", ".", "--target", "install", "--parallel"
-      system "pip3 install ../python"
     end
   end
 end

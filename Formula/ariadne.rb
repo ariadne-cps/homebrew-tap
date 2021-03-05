@@ -18,7 +18,7 @@ class Ariadne < Formula
       system "cmake -G \"Ninja\" .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=#{prefix}"
       system "cmake", "--build", ".", "--target", "install", "--parallel"
     end
-    Dir.chdir("python") do  
+    Dir.chdir("python") do   
       system "python3", "setup.py", "install", "--prefix=#{prefix}"
     end  
   end

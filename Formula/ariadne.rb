@@ -17,7 +17,7 @@ class Ariadne < Formula
     mkdir "build" do
       system "cmake -G \"Ninja\" .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=#{prefix}"
       system "cmake", "--build", ".", "--target", "install", "--parallel"
-      system "cp pyariadne.so /usr/local/lib/python3.9/site-packages"
+      system "cp ariadne.so /usr/local/lib/python3.9/site-packages"
     end
   end
 end

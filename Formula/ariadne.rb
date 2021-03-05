@@ -1,8 +1,8 @@
 class Ariadne < Formula
   desc "C++ library for formal verification of cyber-physical systems"
   homepage "https://github.com/ariadne-cps/ariadne"
-  url "https://github.com/ariadne-cps/ariadne/archive/2.1-rc1.tar.gz"
-  sha256 "3382f22539aca4d1d5ef0ccb7142098049314562b10eeb5aa028e016d4ea4ca3"
+  url "https://github.com/ariadne-cps/ariadne/archive/2.1-rc2.tar.gz"
+  sha256 "75886fbf6d4606efbb4145cb3ae0b11bd7bf0112db16a25dab483c1b5022e41e"
   license "GPL-3.0"
   head "https://github.com/ariadne-cps/ariadne.git"
 
@@ -17,7 +17,6 @@ class Ariadne < Formula
     mkdir "build" do
       system "cmake -G \"Ninja\" .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=#{prefix}"
       system "cmake", "--build", ".", "--target", "install", "--parallel"
-      system "cp ariadne.so /usr/local/lib/python3.9/site-packages"
     end
   end
 end

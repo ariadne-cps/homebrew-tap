@@ -7,6 +7,11 @@ class Ariadne < Formula
   revision 3
   head "https://github.com/ariadne-cps/ariadne.git"
 
+  bottle do
+    root_url "https://www.ariadne-cps.org/cellar"
+    sha256 cellar: :any, big_sur: "91e76af9326650f7de4759b48fb69068e42439e6a29c8b20685dd32aff032ae6"
+  end
+
   depends_on "cmake" => :build
   depends_on "ninja" => :build
   depends_on "cairo"

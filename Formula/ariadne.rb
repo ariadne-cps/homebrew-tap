@@ -25,16 +25,4 @@ class Ariadne < Formula
       import site; site.addsitedir('#{libexec}')
     EOS
   end
-
-  test do
-    Dir.chdir("tutorials/rigorous_numerics_tutorial") do
-      mkdir "build" do
-        system "cmake .. -DCMAKE_BUILD_TYPE=Release"
-        system "cmake", "--build", "."
-      end
-    end
-    Dir.chdir("python/tutorials") do
-      system "python3 rigorous_numerics_tutorial.py"
-    end
-  end
 end

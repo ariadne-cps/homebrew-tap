@@ -3,12 +3,32 @@ name: installation test
 on:
   push:
     branches:
-      - main
+      - main 
 
 jobs:
   build:
     runs-on: macos-latest
 
     steps:
-    - name: Try installation 
+    - name: Install the package
       run: brew install ariadne-cps/tap/ariadne
+
+    - name: Extract Ariadne Distribution
+      working-directory: ${{runner.workspace}}
+      run: |
+        curl -o ariadne.tar.gz -LJO https://github.com/ariadne-cps/ariadne/archive/v2.1-rc3.tar.gz  
+        gunzip -c ariadne.tar.gz | tar xopf -
+          
+    - name: Check C++ Rigorous Numerics Tutorial
+      working-directory: ${{runner.workspace}}/ariadne-2.1-rc3/tutorials/rigorous_numerics
+      run: |
+        cmake .
+        cmake --build .
+        ./rigorous_numerics_tutorial -v 0 > /dev/null
+
+    - name: Run Python Rigorous Numerics Tutorial
+      working-directory: ${{runner.workspace}}/ariadne-2.1-rc3/python/tutorials
+      run: python3 rigorous_numerics_tutorial.py > /dev/null
+
+        
+        

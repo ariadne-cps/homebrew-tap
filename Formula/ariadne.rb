@@ -7,11 +7,11 @@ class Ariadne < Formula
   revision 3
   head "https://github.com/ariadne-cps/ariadne.git"
 
-  depends_on "cairo"
   depends_on "cmake" => :build
+  depends_on "ninja" => :build
+  depends_on "cairo"
   depends_on "gmp"
   depends_on "mpfr"
-  depends_on "ninja" => :build
   depends_on "python@3.9"
 
   def install

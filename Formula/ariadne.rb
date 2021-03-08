@@ -8,7 +8,7 @@ class Ariadne < Formula
 
   bottle do
     root_url "https://www.ariadne-cps.org/cellar"
-    sha256 cellar: :any, big_sur: "91e76af9326650f7de4759b48fb69068e42439e6a29c8b20685dd32aff032ae6"
+    sha256 cellar: :any, big_sur: "ebb63c23f433d815bb205f8cabc6cf049c88b24e1f07858520e6eec3ab8d7591"
   end
 
   depends_on "cmake" => :build
@@ -20,7 +20,7 @@ class Ariadne < Formula
 
   def install
     mkdir "build" do
-      system "cmake -G \"Ninja\" .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=#{prefix} -DPYTHON_BINDINGS_INSTALL_DIR=libexec"
+      system "cmake ..", "-G \"Ninja\"", "-DCMAKE_BUILD_TYPE=Release", "-DCMAKE_INSTALL_PREFIX=#{prefix}", "-DPYTHON_BINDINGS_INSTALL_DIR=libexec"
       system "cmake", "--build", ".", "--target", "install", "--parallel"
     end
 

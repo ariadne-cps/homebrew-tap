@@ -20,7 +20,7 @@ class Ariadne < Formula
 
   def install
     mkdir "build" do
-      system "cmake .. -G Ninja -DCMAKE_BUILD_TYPE=Release",
+      system "cmake .. -G Ninja -DCMAKE_BUILD_TYPE=Release"\
              "-DCMAKE_INSTALL_PREFIX=#{prefix} -DPYTHON_BINDINGS_INSTALL_DIR=libexec"
       system "cmake", "--build", ".", "--target", "install", "--parallel"
     end

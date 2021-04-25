@@ -1,8 +1,8 @@
 class Ariadne < Formula
   desc "C++ library for formal verification of cyber-physical systems"
   homepage "https://github.com/ariadne-cps/ariadne"
-  url "https://github.com/ariadne-cps/ariadne/archive/v2.1.tar.gz"
-  sha256 "1c0204dbec6c01d898f426e40d406ec4f39cd29b9c30f9d203525fa51cd6982a"
+  url "https://github.com/ariadne-cps/ariadne/archive/v2.2.tar.gz"
+  sha256 "86e56fcbb4b4e8c284563d5baa5959133db155654e7afe270db71b435608cda9"
   license "GPL-3.0"
   head "https://github.com/ariadne-cps/ariadne.git"
 
@@ -15,6 +15,7 @@ class Ariadne < Formula
   depends_on "ninja" => :build
   depends_on "cairo"
   depends_on "gmp"
+  depends_on "gnuplot"
   depends_on "mpfr"
   depends_on "python@3.9"
 

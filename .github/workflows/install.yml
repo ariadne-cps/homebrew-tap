@@ -3,7 +3,10 @@ name: installation test
 on:
   push:
     branches:
-      - main 
+      - main
+
+env:
+  VERSION: 2.2 
 
 jobs:
   build:
@@ -19,18 +22,18 @@ jobs:
     - name: Extract Ariadne Distribution
       working-directory: ${{runner.workspace}}
       run: |
-        curl -o ariadne.tar.gz -LJO https://github.com/ariadne-cps/ariadne/archive/v2.1-rc3.tar.gz  
+        curl -o ariadne.tar.gz -LJO https://github.com/ariadne-cps/ariadne/archive/v$VERSION.tar.gz  
         gunzip -c ariadne.tar.gz | tar xopf -
           
     - name: Check C++ Rigorous Numerics Tutorial
-      working-directory: ${{runner.workspace}}/ariadne-2.1-rc3/tutorials/rigorous_numerics
+      working-directory: ${{runner.workspace}}/ariadne-$VERSION/tutorials/rigorous_numerics
       run: |
         cmake . -DCMAKE_CXX_COMPILER=g++-10
         cmake --build .
         ./rigorous_numerics_tutorial -v 0 > /dev/null
 
     - name: Run Python Rigorous Numerics Tutorial
-      working-directory: ${{runner.workspace}}/ariadne-2.1-rc3/python/tutorials
+      working-directory: ${{runner.workspace}}/ariadne-$VERSION/python/tutorials
       run: python3 rigorous_numerics_tutorial.py > /dev/null
 
         

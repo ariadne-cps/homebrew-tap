@@ -8,7 +8,6 @@ class Ariadne < Formula
 
   bottle do
     root_url "https://www.ariadne-cps.org/cellar"
-    rebuild 1
     sha256 cellar: :any, big_sur: "c95cbba0ece602620f83d32e95c02af5698211a81bbfea6780b1175dc00cfa6a"
   end
 

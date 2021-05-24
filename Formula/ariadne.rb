@@ -1,8 +1,8 @@
 class Ariadne < Formula
   desc "C++ library for formal verification of cyber-physical systems"
   homepage "https://github.com/ariadne-cps/ariadne"
-  url "https://github.com/ariadne-cps/ariadne/archive/v2.2.tar.gz"
-  sha256 "86e56fcbb4b4e8c284563d5baa5959133db155654e7afe270db71b435608cda9"
+  url "https://github.com/ariadne-cps/ariadne/archive/v2.3.tar.gz"
+  sha256 "387c7200d7886236afb515fe4e717c5f76f3a3e4df7999da4b9de4b3ab56fd4b"
   license "GPL-3.0"
   head "https://github.com/ariadne-cps/ariadne.git"
 

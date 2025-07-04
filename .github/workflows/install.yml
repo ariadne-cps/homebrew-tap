@@ -6,7 +6,7 @@ on:
       - main
 
 env:
-  VERSION: 2.4.1 
+  VERSION: 2.5.3
 
 jobs:
   build:
@@ -15,9 +15,6 @@ jobs:
     steps:
     - name: Install the package
       run: brew install ariadne-cps/tap/ariadne
-
-    - name: Install G++ 10
-      run: brew install gcc@10
 
     - name: Extract Ariadne Distribution
       working-directory: ${{runner.workspace}}
@@ -29,7 +26,7 @@ jobs:
     - name: Check C++ Rigorous Numerics Tutorial
       working-directory: ${{runner.workspace}}/ariadne/tutorials/rigorous_numerics
       run: |
-        cmake . -DCMAKE_CXX_COMPILER=g++-10
+        cmake .
         cmake --build .
         ./rigorous_numerics_tutorial -v 0 > /dev/null
 
